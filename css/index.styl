@@ -2,6 +2,7 @@
 gris= #E8E8E8
 grisOscuro=#444
 azul=#22BCE0
+naranja = #DD4F24
 
 body
 	background gris
@@ -12,6 +13,7 @@ body
 header
 	background grisOscuro
 	color white
+	overflow hidden
 	padding 0.5em
 	position relative
 	
@@ -21,10 +23,28 @@ header
 		width 60px
 		
 		img
-			width 60px
+			width 55px
 			
 	.titular
-		margin 10px 80px 10px 70px
+		margin 0 60px 0 70px
+		
+		.filtro
+			color azul
+			font-weight bold
+			font-style italic
+			text-decoration none
+			
+		.publicar
+			background naranja
+			color white
+			float right
+			font-style italic
+			margin -5px 1em 0 0
+			padding 0.2em 0.5em
+			text-decoration none
+			text-shadow 1px 1px 0px black
+			
+		
 		.titulo
 			font-size 18px
 			font-weight normal
@@ -33,13 +53,30 @@ header
 			
 	.usuario
 		position absolute
-		top 0
-		right 0
+		top 10px
+		right 10px
 		.avatar
+			margin 0 1em 0 0
+			position relative
+			z-index 2 
 			img
 				width 50px
 				border-radius 50%
-	
+		
+		.flechita
+			background naranja
+			color white
+			display block
+			padding 3px
+			position absolute
+			right 0
+			text-align right
+			top 15px
+			width 50%
+			z-index 0
+			
+			
+
 				
 				
 nav
