@@ -5,6 +5,17 @@ gris_texto=#7A7A7A
 azul=#22BCE0
 naranja = #DD4F24
 
+@font-face {
+	font-family: 'icomoon';
+	src:url('../fonts/icomoon.eot?a60lpy');
+	src:url('../fonts/icomoon.eot?#iefixa60lpy') format('embedded-opentype'),
+		url('../fonts/icomoon.woff?a60lpy') format('woff'),
+		url('../fonts/icomoon.ttf?a60lpy') format('truetype'),
+		url('../fonts/icomoon.svg?a60lpy#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
 a
 	color naranja
 
@@ -14,6 +25,24 @@ body
 	font-family Arial
 	font-size 16px
 
+footer
+	background naranja
+	color rgba(white, 0.5)
+	text-align center 
+	padding 1em 0
+	width 100%
+	
+	h3
+		font-size 14px
+		font-weight normal
+		
+		strong
+			display block
+		
+		.mejor
+			&:before
+			&:after
+				content " - "
 header
 	background grisOscuro
 	box-shadow 0 5px 0 rgba(0,0,0,0.2)
@@ -52,6 +81,11 @@ header
 			text-decoration none
 			text-shadow 1px 1px 0px black
 			
+			&:before 
+				display inline-block
+				font-family "icomoon"
+				content "\e908"
+				margin 0 3px 0 0
 		
 		.titulo
 			font-size 18px
@@ -64,7 +98,7 @@ header
 		top 10px
 		right 10px
 		.avatar
-			margin 0 1em 0 0
+			margin 0 1.2em 0 0
 			position relative
 			z-index 2 
 			img
@@ -75,13 +109,21 @@ header
 			background naranja
 			color white
 			display block
-			padding 3px
+			padding 2.5px
 			position absolute
 			right 0
 			text-align right
+			text-decoration none
 			top 15px
 			width 50%
 			z-index 0
+			
+			&:after
+				content "\e601" 
+				display inline-block
+				font-family "icomoon"
+				text-shadow 1px 1px 0px black
+				
 			
 			
 
@@ -128,20 +170,76 @@ nav
 		border-radius 0 0 0.5em 0.5em
 		box-shadow 2px 2px 10px rgba(black, 0.5) 
 		color gris_texto
+		margin-bottom 1em
 		
 		
 		
 		.acciones
 			border-top 3px solid azul
 			padding 0.5em
+			overflow hidden 
 			
+			.datos
+				float right
+				
+				.comentarios
+					background gris_texto
+					border-radius 3px
+					color white
+					margin 0 1em 0 0
+					padding 2px 5px
+					text-decoration none
+					
+				.estrellita
+					text-decoration none
+					
+					&:after
+						color #E0D561
+						content "\e9d7"
+						font-family icomoon
+			.votos 
+				float left
+				
+				.down
+				.up
+					text-decoration none
+					
+				.down
+					color red
+					&:before
+						font-size 1.2em
+						content "\e601"
+						font-family icomoon
+						vertical-align bottom 
+					
+				.up 
+					color green
+					&:before
+						font-size 1.2em
+						content "\e600"
+						font-family icomoon
+						vertical-align bottom
+						
 		.descripcion
 			color gris_texto
 			
 			.detalles
 				height 160px
 				margin-left 130px
-			
+				
+				.autor
+					margin 0.5em 0 2em 0
+					
+				.fecha 
+					float right
+					margin 0 1em 0 0
+						
+				.tag 
+					background azul
+					border-radius 0.5em
+					color white
+					text-decoration none
+					padding 0.2em 0.5em
 			.titulo
 				color grisOscuro
 				font-size 18px
