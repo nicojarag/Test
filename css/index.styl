@@ -1,8 +1,12 @@
 
 gris= #E8E8E8
 grisOscuro=#444
+gris_texto=#7A7A7A
 azul=#22BCE0
 naranja = #DD4F24
+
+a
+	color naranja
 
 body
 	background gris
@@ -12,10 +16,12 @@ body
 
 header
 	background grisOscuro
+	box-shadow 0 5px 0 rgba(0,0,0,0.2)
 	color white
 	overflow hidden
 	padding 0.5em
-	position relative
+	position relative		
+	z-index 1
 	
 	
 	.logo 
@@ -83,6 +89,18 @@ header
 				
 nav
 	background azul
+	border-left 15px solid white
+	position relative
+	
+	&:before
+		border-bottom 20px solid transparent
+		border-left 7px solid white
+		border-top 20px solid transparent
+		content ""
+		position absolute
+		top 0
+		left 0
+		
 	
 	.menu
 		height 40px
@@ -100,4 +118,45 @@ nav
 				display block
 				margin 0 0.5em
 				padding 0.2em
-				text-decoration none	
+				text-decoration none
+					
+.posts
+	padding 0.5em
+	
+	.post 
+		background white
+		border-radius 0 0 0.5em 0.5em
+		box-shadow 2px 2px 10px rgba(black, 0.5) 
+		color gris_texto
+		
+		
+		
+		.acciones
+			border-top 3px solid azul
+			padding 0.5em
+			
+		.descripcion
+			color gris_texto
+			
+			.detalles
+				height 160px
+				margin-left 130px
+			
+			.titulo
+				color grisOscuro
+				font-size 18px
+				font-style italic
+				margin 0
+				padding 0.5em 0.5em 0 0 
+			.imagen
+				float left
+				margin 0
+					
+				img
+					height 160px
+					vertical-align top
+					width 120px
+					
+					
+					 	
+		
