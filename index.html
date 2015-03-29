@@ -266,24 +266,7 @@
 	}
 
 	
-	if(window.addEventListener)
-	{
-		window.addEventListener("load", function(){
-			alert("bienvenido");
-		});
-		window.addEventListener("load", function(){
-			console.log("estoy ahci");
-		});
-	}	
-	else {
-		window.attachEvent("onload", function(){
-			alert("bienvenido");
-		});
-		window.attachEvent("onload",function()
-		{
-			console.log("ola en IE");
-		});
-	}
+	$('.publicar').on("click", darBienvenida);
 	
 	</script>
 
