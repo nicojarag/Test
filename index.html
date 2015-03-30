@@ -56,8 +56,9 @@
 			</p>
 			<p>
 				<label for="tag">Tag</label>
-				<input type="text" name="tag" id="tag"/>
+				<input type="text" name = "tag" id="tag"/>
 			</p>
+				<input value = "Publicar" type="submit"></input>
 				
 		</form>
 	<section class="posts">
@@ -205,7 +206,7 @@
 					<p class="autor">
 						por <a href="#"> Nicolás jara</a>
 					</p>
-					<a class="tag">HTML5</a>
+					<a class="tag" href="#">HTML5</a>
 					<p class="fecha">hace <strong>20 min</strong></p>
 				</div>
 			</div>
@@ -270,26 +271,60 @@
 	</footer>
 	<script type="text/javascript">
  
-	 
-	function darBienvenida()
-	{
-		
-		alert("bienvenido");	
-	
-}
+	$(function(){
+		$('.publicar').on("click", mostrarFormulario);
 
-	 
-	function hacerAlgo()
-	{
-		console.log("hacer algo")
-	}
+		function mostrarFormulario(){
+			$('form').slideToggle();
+		}
 
-	
-	$('.publicar').on("click", darBienvenida);
- 
+		$("form").on("submit", procesarFormulario);
 
- 
-	
+		function procesarFormulario(ev){
+			ev.preventDefault();
+			var titulo = $("input[name=titulo]").val();
+			var autor = $("input[name=autor]").val();
+			var etiqueta = $("input[name=tag]").val();
+
+			var template='<article class="post"> \
+				<div class="descripcion">  \
+					<figure class="imagen"> \
+						<img src="img/imagen.png"/> \
+					</figure> \
+					<div class="detalles"> \
+						<h2 class="titulo"> \
+							'+titulo+' \
+						</h2> \
+						<p class="autor"> \
+							por <a href="#"> '+autor+'</a> \
+						</p> \
+						<a class="tag">'+etiqueta+'</a> \
+						<p class="fecha">hace <strong>20 min</strong></p> \
+					</div> \
+				</div> \
+				<div class="acciones"> \
+					<div class="votos"> \
+						<a class="up" href="#"></a> \
+						<span class="total">155</span> \
+						<a class="down" href="#"></a> \
+					</div> \
+					<div class="datos"> \
+						<a class="comentarios" href="#"> \
+							10 \
+						</a> \
+						<a class="estrellita" href="#"> \
+						</a> \
+					</div> \
+				</div> \
+			</article>';
+			$('.posts').prepend(template);
+			$('input[type=text]').val('');
+			$('form').slideUp();
+
+
+
+		}
+	});		
 	</script>
 
 </body>
